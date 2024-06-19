@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Permanent+Marker&family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Inter:wght@500&family=Permanent+Marker&family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Inter:wght@500&family=Nunito&family=Permanent+Marker&family=Shadows+Into+Light&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -43,11 +43,11 @@ export const App: React.FC = () => {
 	};
 
 	const handleExit = () => {
-		logOut(); // Cierra la sesión del usuario
-		setAllProducts([]); // Limpia el carrito
+		logOut(); // Logs out the user
+		setAllProducts([]); // Clears the cart
 		setTotal(0);
 		setCountProducts(0);
-		setUserName(''); // Vacía el nombre de usuario
+		setUserName(''); // Empties the username
 		setShowModal(true);
 	};
 

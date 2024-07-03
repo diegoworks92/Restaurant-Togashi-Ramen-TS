@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import { RiCloseLine } from 'react-icons/ri';
 import Buttons from '.././designs/Buttons';
-import { ShowPropsString } from './AccountTotal';
 
-const AddComment = ({ show }: ShowPropsString) => {
+interface EnableComments {
+	enableComments: string;
+}
+
+const AddComment = ({ enableComments }: EnableComments) => {
 	const [comment, setComment] = useState('');
 	const [savedComment, setSavedComment] = useState<string | null>(null);
 
@@ -29,7 +32,7 @@ const AddComment = ({ show }: ShowPropsString) => {
 	return (
 		<div className='flex justify-center'>
 			<div
-				className={` ${show} w-3/4 flex flex-col justify-center items-center`}
+				className={` ${enableComments} w-3/4 flex flex-col justify-center items-center`}
 			>
 				<textarea
 					className='w-full px-3 py-2 text-sm leading-tight text-dark border rounded shadow appearance-none focus:outline-none focus:shadow-outline max-h-40'

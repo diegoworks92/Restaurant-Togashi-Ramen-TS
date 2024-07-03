@@ -29,7 +29,8 @@ const OrdersTab = () => {
 				/>
 				<WhereToEat buttonsClass='flex justify-center flex-wrap gap-10 mb-6' />
 
-				<AddComment show='mt-6' />
+				<AddComment enableComments='mt-6' />
+
 				{/* Submit payment */}
 				<div className='flex justify-center flex-col'>
 					<AccountTotal
@@ -45,6 +46,7 @@ const OrdersTab = () => {
 						toggleOpen={toggleOpen}
 						paymentButton='hidden'
 					/>
+
 					<PurchaseConfirmation />
 				</div>
 			</div>

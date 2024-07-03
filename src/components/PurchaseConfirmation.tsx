@@ -1,13 +1,23 @@
 import { useState } from 'react';
 import { MdOutlineCancel } from 'react-icons/md';
 import Buttons from './designs/Buttons';
+import { useCartStore, useConfirmationStore } from '../store/store';
+import { IoBagCheck } from 'react-icons/io5';
+import { BiSolidError } from 'react-icons/bi';
+import { useNavigate } from 'react-router-dom';
 
 function PurchaseConfirmation() {
 	const [isPurchaseModalOpen, setPurchaseModalOpen] = useState(false);
+	const { shouldNavigate } = useConfirmationStore();
+	const navigate = useNavigate();
 
 	const handlePurchase = () => {
 		setPurchaseModalOpen(true);
+		if (shouldNavigate) {
+			navigate('/');
+		}
 	};
+	const { countProducts } = useCartStore();
 
 	return (
 		<div className='flex justify-center whitespace-nowrap'>
@@ -36,7 +46,7 @@ function PurchaseConfirmation() {
 						</span>
 						<div className='inline-block align-bottom bg-light rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full border border-light'>
 							<div className='bg-primary text-dark dark:bg-dark px-4 pt-5 pb-4 sm:p-6 sm:pb-4'>
-								<div className='sm:flex sm:items-start'>
+								<div className='sm:flex sm:items-start flex justify-center'>
 									<button
 										type='button'
 										className='absolute top-0 right-0 m-2 text-light hover:text-fall text-3xl sm:px-1'
@@ -44,12 +54,27 @@ function PurchaseConfirmation() {
 									>
 										<MdOutlineCancel />
 									</button>
-									<div className='mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left'>
+
+									<div className='sm:flex items-center'>
 										<h3
-											className='text-2xl leading-6 font-semibold text-light mb-5'
+											className='sm:flex text-center text-2xl leading-6 font-semibold text-light mt-7 whitespace-normal sm:whitespace-nowrap'
 											id='modal-title'
 										>
-											Purchased product
+											{countProducts > 0 ? (
+												<>
+													<span>Purchase made successfully!</span>
+													<div className='justify-center flex'>
+														<IoBagCheck className='text-primary sm:ml-2 mt-2 sm:mt-0' />
+													</div>
+												</>
+											) : (
+												<>
+													<span>First, you must add a product to the cart</span>
+													<div className='justify-center flex'>
+														<BiSolidError className='text-sun sm:ml-2 mt-2 sm:mt-0' />
+													</div>
+												</>
+											)}
 										</h3>
 									</div>
 								</div>

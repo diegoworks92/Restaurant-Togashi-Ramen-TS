@@ -43,89 +43,25 @@ const Products = ({
 	} = useCartStore();
 
 	const [productAdded, setProductAdded] = useState(false);
-	/* 
-	const onAddProduct = (product: Product) => {
-		setProductAdded(true);
-
-		if (
-			allProducts.find((item) => item.id === `${product.type}-${product.id}`)
-		) {
-			const products = allProducts.map((item: Product) =>
-				item.id === `${product.type}-${product.id}`
-					? { ...item, quantity: item.quantity + 1 }
-					: item,
-			);
-
-			setTotal(total + product.price * product.quantity);
-			setCountProducts(countProducts + product.quantity);
-			return setAllProducts([...products]);
-		}
-		setTotal(total + product.price * product.quantity);
-		setCountProducts(countProducts + product.quantity);
-		setAllProducts([
-			...allProducts,
-			{ ...product, id: `${product.type}-${product.id}` },
-		]);
-	};
- */
 
 	const onAddProduct = (product: Product) => {
-		// Busca el producto en el carrito
+		// Search for the product in the cart
 		const existingProduct = allProducts.find((item) => item.id === product.id);
 
 		if (existingProduct) {
-			// Si el producto ya está en el carrito, incrementa su cantidad
+			// If the product is already in the cart, increase its quantity
 			existingProduct.quantity += 1;
 		} else {
-			// Si el producto no está en el carrito, añádelo
+			// If the product is not in the cart, add it
 			setAllProducts([...allProducts, { ...product, quantity: 1 }]);
 		}
 
-		// Actualiza el total y la cantidad de productos
+		// Update the total and the number of products
 		setTotal(total + product.price);
 		setCountProducts(countProducts + 1);
-	};
 
-	/* 
-	const addProductToSelectedPlates = (product: Product) => {
-		setSelectedPlates((prevSelectedPlates: Product[]) => [
-			...prevSelectedPlates,
-			product,
-		]);
-	};
- */
-	/* 	const onAddProduct = (product: Product) => {
 		setProductAdded(true);
-
-		if (
-			allProducts.find((item) => item.id === `${product.type}-${product.id}`)
-		) {
-			const products = allProducts.map((item: Product) =>
-				item.id === `${product.type}-${product.id}`
-					? { ...item, quantity: item.quantity + 1 }
-					: item,
-			);
-
-			setTotal(total + product.price * product.quantity);
-			setCountProducts(countProducts + product.quantity);
-			setAllProducts([...products]);
-			setSelectedPlates((prevSelectedPlates) => [
-				...prevSelectedPlates,
-				product,
-			]);
-		} else {
-			setTotal(total + product.price * product.quantity);
-			setCountProducts(countProducts + product.quantity);
-			setAllProducts([
-				...allProducts,
-				{ ...product, id: `${product.type}-${product.id}` },
-			]);
-			setSelectedPlates((prevSelectedPlates) => [
-				...prevSelectedPlates,
-				product,
-			]);
-		}
-	}; */
+	};
 
 	useEffect(() => {
 		if (productAdded) {
@@ -174,51 +110,40 @@ const Products = ({
 		setSort(!sort);
 	};
 
-	/* 	const [explanationId, setExplanationId] = useState<number | null>(null); */
 	const [explanationId, setExplanationId] = useState<string | null>(null);
-
-	/* 	const toggleExplanation = (id: string) => {
-        setExplanationId(explanationId === id ? null : id);
-    }; */
-
-	/* 	const toggleExplanation = (id: string) => {
-		const numId = Number(id); // Convierte id a un número
-		setExplanationId(explanationId === numId ? null : numId);
-	};
- */
 
 	const toggleExplanation = (id: string) => {
 		setExplanationId(explanationId === id ? null : id);
 	};
 
-	// Persistir el estado del carrito actualizado en el almacenamiento local
+	// Persist the updated cart state in local storage
 	useEffect(() => {
-		// Convertir el estado del carrito a cadena JSON
+		// Convert the cart state to a JSON string
 		const cartState = JSON.stringify({
 			allProducts: allProducts,
 			total: total,
 			countProducts: countProducts,
-			selectedPlates: selectedPlates, // Añade selectedPlates aquí
+			selectedPlates: selectedPlates, // Add selectedPlates here
 		});
 
-		// Guardar el estado del carrito en el almacenamiento local
+		// Save the cart state in local storage
 		localStorage.setItem('cartState', cartState);
-	}, [allProducts, total, countProducts, selectedPlates]); // Añade selectedPlates a las dependencias del efecto
+	}, [allProducts, total, countProducts, selectedPlates]); // Add selectedPlates to the effect dependencies
 
 	useEffect(() => {
-		// Recuperar el estado del carrito del almacenamiento local
+		// Retrieve the cart state from local storage
 		const storedCartState = localStorage.getItem('cartState');
 
 		if (storedCartState) {
-			// Convertir la cadena JSON a un objeto JavaScript
+			// Convert the JSON string to a JavaScript object
 			const cartState = JSON.parse(storedCartState);
 
-			// Establecer el estado de la aplicación con los valores recuperados
+			// Set the application state with the retrieved values
 			setAllProducts(cartState.allProducts);
 			setTotal(cartState.total);
 			setCountProducts(cartState.countProducts);
 			if (typeof setSelectedPlates === 'function') {
-				// Verificar si setSelectedPlates es una función
+				// Verify if setSelectedPlates is a function
 				setSelectedPlates(cartState.selectedPlates);
 			}
 		}
@@ -277,9 +202,8 @@ const Products = ({
 					</div>
 				</form>
 
-				{/* Title content */}
-
 				{/* Add an accordion to change the sort order */}
+
 				<details>
 					<summary
 						className={`flex items-center gap-4 text-light bg-secondary dark:bg-dark py-2 px-4 min-w-full ${
@@ -327,14 +251,7 @@ const Products = ({
 							>
 								{product.name}
 							</p>
-							{/* 			{Number(explanationId) === product.id && (
-								<span
-									onClick={() => toggleExplanation(product.id.toString())}
-									className='absolute top-0 left-0 text-secondary bg-white rounded-xl z-10'
-								>
-									{product.description}
-								</span>
-							)} */}
+
 							{explanationId === product.id.toString() && (
 								<span
 									onClick={() => toggleExplanation(product.id.toString())}

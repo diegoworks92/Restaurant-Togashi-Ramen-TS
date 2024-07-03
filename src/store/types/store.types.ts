@@ -84,3 +84,16 @@ type UserNameType = {
     userName: string;
     setUserName: (value: string) => void;
 };
+
+
+
+type CartState = {
+    allProducts: Product[];
+    setAllProducts: (products: Product[]) => void;
+    total: number;
+    setTotal: (value: number) => void;
+    countProducts: number;
+    setCountProducts: (value: number) => void;
+    selectedPlates: Product[];
+    setSelectedPlates: (value: Product[] | ((prevState: Product[]) => Product[])) => void;
+}

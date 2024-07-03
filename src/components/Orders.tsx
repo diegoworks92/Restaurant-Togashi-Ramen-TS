@@ -20,7 +20,7 @@ interface OrdersProps {
 }
 
 const Orders = (props: OrdersProps) => {
-	const { disguise, explanation, trash2, pFour } = props;
+	const { descriptions, disguise, explanation, trash, trash2, pFour } = props;
 
 	const {
 		allProducts,
@@ -133,6 +133,19 @@ const Orders = (props: OrdersProps) => {
 						</div>
 						{/* Note */}
 						<div className='grid grid-cols-6 items-center'>
+							{/* //////////////// */}
+
+							<div
+								className={`${descriptions} col-span-5 border border-light dark:border-light rounded-xl`}
+							>
+								<p className='m-1'>{product.description}</p>
+							</div>
+							<button>
+								<RiDeleteBin6Line
+									onClick={() => onDeleteProduct(product)}
+									className={`${trash} w-9 h-9 p-2 ml-3 md:ml-16 text-delete  border border-delete rounded-full`}
+								/>
+							</button>
 							<div className={`${explanation} col-span-6 flex justify-around`}>
 								<div className={`flex justify-center flex-col items-center `}>
 									<button
@@ -168,6 +181,12 @@ const Orders = (props: OrdersProps) => {
 								</p>
 							)}
 						</div>
+						{/* 		<button>
+							<RiDeleteBin6Line
+								onClick={() => onDeleteProduct(product)}
+								className={`${trash} w-9 h-9 p-2 ml-3 md:ml-16 text-delete  border border-delete rounded-full`}
+							/>
+						</button> */}
 					</div>
 				</div>
 			))}

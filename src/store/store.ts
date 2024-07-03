@@ -32,17 +32,6 @@ export const useOrdersStore = create<OrderStore>((set) => ({
 
 }));
 
-interface CartState {
-    allProducts: Product[];
-    setAllProducts: (products: Product[]) => void;
-    total: number;
-    setTotal: (value: number) => void;
-    countProducts: number;
-    setCountProducts: (value: number) => void;
-    selectedPlates: Product[];
-    setSelectedPlates: (value: Product[] | ((prevState: Product[]) => Product[])) => void;
-}
-
 // Group the state related to the cart
 export const useCartStore = create<CartState>((set) => ({
     allProducts: [],
@@ -87,3 +76,16 @@ logOut: () => {
 isActive: true,
 setIsActive: (value: boolean) => set({ isActive: value }),
 }));
+
+
+
+interface ConfirmationState {
+    shouldNavigate: boolean;
+    setShouldNavigate: (value: boolean) => void;
+  }
+  
+
+  export const useConfirmationStore = create<ConfirmationState>((set) => ({
+    shouldNavigate: false,
+    setShouldNavigate: (value: boolean) => set({ shouldNavigate: value }),
+  }));

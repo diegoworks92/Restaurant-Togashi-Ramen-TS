@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useMenuStore, useUserStore } from '../store/store';
 import Login from './header/Login';
+import { useLocation } from 'react-router-dom';
 
 const Header: React.FC<UserNameType> = ({ userName, setUserName }) => {
 	/* date */
@@ -11,6 +12,8 @@ const Header: React.FC<UserNameType> = ({ userName, setUserName }) => {
 
 	const { setActiveButton, headerButton, setHeaderButton } = useMenuStore();
 
+	const location = useLocation();
+
 	useEffect(() => {
 		if (isActive === true) {
 			headerButton;
@@ -19,6 +22,13 @@ const Header: React.FC<UserNameType> = ({ userName, setUserName }) => {
 			setHeaderButton(-1);
 		}
 	}, [isActive]);
+
+	useEffect(() => {
+		// Sets the active button based on the current route
+		const currentPath = location.pathname;
+		const buttonId = namesBtn.find((btn) => btn.link === currentPath)?.id || -1;
+		setHeaderButton(buttonId);
+	}, [location]);
 
 	const toggleOrdersTabF = (id: number) => {
 		if (id === 2 || id === 3 || id === 4) {

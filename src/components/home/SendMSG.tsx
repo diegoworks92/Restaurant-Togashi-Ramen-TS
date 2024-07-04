@@ -51,10 +51,14 @@ const SendMSG = () => {
 				</div>
 
 				<div className='relative mb-7'>
-					<label className='block mb-2 text-sm text-light dark:text-light'>
+					<label
+						htmlFor='inputName'
+						className='block mb-2 text-sm text-light dark:text-light'
+					>
 						Your Name
 					</label>
 					<input
+						id='inputName'
 						className='w-full px-3 py-2 text-sm leading-tight text-dark border rounded shadow appearance-none focus:outline-none focus:shadow-outline'
 						type='text'
 						{...register('name', { required: true, maxLength: 10 })}
@@ -70,11 +74,16 @@ const SendMSG = () => {
 						</p>
 					)}
 				</div>
+
 				<div className='mb-7'>
-					<label className='block mb-2 text-sm text-light dark:text-light'>
+					<label
+						htmlFor='inputEmail'
+						className='block mb-2 text-sm text-light dark:text-light'
+					>
 						Email
 					</label>
 					<input
+						id='inputEmail'
 						className='w-full px-3 py-2 text-sm leading-tight text-dark border rounded shadow appearance-none focus:outline-none focus:shadow-outline'
 						type='text'
 						{...register('email', {
@@ -95,10 +104,14 @@ const SendMSG = () => {
 				</div>
 
 				<div className='mb-5 col-span-2'>
-					<label className='block mb-2 text-sm text-light dark:text-light'>
+					<label
+						htmlFor='inputMessage'
+						className='block mb-2 text-sm text-light dark:text-light'
+					>
 						Message
 					</label>
 					<textarea
+						id='inputMessage'
 						className='w-full max-h-32 px-3 py-2 text-sm leading-tight text-dark border rounded shadow appearance-none focus:outline-none focus:shadow-outline h-32 resize-y'
 						{...register('message', { required: true })}
 						onChange={(e) => {

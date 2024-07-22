@@ -13,7 +13,7 @@ import Car from './components/Car';
 import Header from './components/Header';
 import { Routes, Route } from 'react-router-dom';
 import Drinks from './components/header/Drinks';
-import HotDishes from './components/header/HotDishes';
+import Desserts from './components/header/Desserts';
 import Home from './components/sidebar/Home';
 import OrdersTab from './components/sidebar/OrdersTab';
 import Ramen from './components/header/Ramen';
@@ -97,7 +97,7 @@ export const App: React.FC = () => {
 						<Route path='/orders' element={<OrdersTab />} />
 						<Route path='/' element={<Home />} />
 						<Route path='/ramen' element={<Ramen />} />
-						<Route path='/hotdishes' element={<HotDishes />} />
+						<Route path='/desserts' element={<Desserts />} />
 						<Route path='/drinks' element={<Drinks />} />
 					</Routes>
 				</div>

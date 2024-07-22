@@ -57,13 +57,13 @@ const Header: React.FC<UserNameType> = ({ userName, setUserName }) => {
 		},
 		{
 			id: 3,
-			name: 'More dishes',
-			link: '/hotdishes',
+			name: 'Drinks',
+			link: '/drinks',
 		},
 		{
 			id: 4,
-			name: 'Drinks',
-			link: '/drinks',
+			name: 'Desserts',
+			link: '/desserts',
 		},
 	];
 

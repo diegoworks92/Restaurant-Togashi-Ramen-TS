@@ -1,17 +1,17 @@
 import Products from './Products';
 
-const HotDishes = () => {
+const Desserts = () => {
 	return (
 		<Products
-			title='Choose Dishes'
-			typeProduct='dishes'
+			title='Desserts'
+			typeProduct='desserts'
 			wi='w-40'
 			hei='h-40'
 			roun='rounded-full'
 			alcohol='hidden'
-			kindFood=''
+			kindFood='hidden'
 		/>
 	);
 };
 
-export default HotDishes;
+export default Desserts;

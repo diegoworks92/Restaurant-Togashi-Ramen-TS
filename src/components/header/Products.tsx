@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useCartStore } from '../../store/store';
-import { ramen, dishes, drinks } from '../../components/dishData';
 import {
 	RiArrowDownSLine,
 	RiSearch2Line,
@@ -77,8 +76,42 @@ const Products = ({
 	const [search, setSearch] = useState('');
 	let filteredItems: Product[] = [];
 
-	if (typeProduct === 'dishes') {
-		filteredItems = dishes.filter((dish) =>
+	// Defines the status for each type of product
+	const [ramen, setRamen] = useState([]);
+	const [drinks, setDrinks] = useState([]);
+	const [desserts, setDesserts] = useState([]);
+
+	// Call the API when the component is mounted
+	useEffect(() => {
+		fetch('https://togashi-api.vercel.app/ramen')
+			.then((response) => response.json())
+			.then((data) => {
+				const updatedData = data.map((item: any) => ({
+					...item,
+					spicy: Boolean(item.spicy),
+					vegetarian: Boolean(item.vegetarian),
+					vegan: Boolean(item.vegan),
+				}));
+				setRamen(updatedData);
+			});
+
+		fetch('https://togashi-api.vercel.app/drinks')
+			.then((response) => response.json())
+			.then((data) => {
+				const updatedData = data.map((item: any) => ({
+					...item,
+					alcohol: Boolean(item.alcohol),
+				}));
+				setDrinks(updatedData);
+			});
+
+		fetch('https://togashi-api.vercel.app/desserts')
+			.then((response) => response.json())
+			.then((data) => setDesserts(data));
+	}, []);
+
+	if (typeProduct === 'desserts') {
+		filteredItems = desserts.filter((dish) =>
 			dish.name.toLowerCase().includes(search.toLowerCase()),
 		);
 	} else if (typeProduct === 'ramen') {
@@ -241,13 +274,13 @@ const Products = ({
 							<img
 								src={product.img}
 								className={`${wi} ${hei} object-cover -mt-20 shadow-2xl ${roun} cursor-pointer`}
-								onClick={() => toggleExplanation(product.id.toString())} // Añade un manejador de clics a la imagen
+								onClick={() => toggleExplanation(product.id.toString())} // Add a click handle to the image
 							/>
 							<p
 								className={`text-xl flex gap-2 hover:text-primary cursor-pointer ${
 									explanationId === product.id.toString() ? 'text-primary' : ''
 								}`}
-								onClick={() => toggleExplanation(product.id.toString())} // Añade un manejador de clics al nombre
+								onClick={() => toggleExplanation(product.id.toString())} // Add a click handle to the name
 							>
 								{product.name}
 							</p>
@@ -301,8 +334,8 @@ const Products = ({
 						</div>
 					))
 				) : (
-					<div className='item flex flex-col items-center gap-2 text-center w-96 text-dark bg-tangerine p-14 text-3xl rounded-2xl m-4 '>
-						<p className=' '>{`No results found for "${search}"`}</p>
+					<div className='item flex flex-col items-center gap-2 text-center w-96 text-white bg-dark p-14 text-3xl rounded-2xl m-4 '>
+						<p className=' '>{`Loading data...`}</p>
 					</div>
 				)}
 			</div>

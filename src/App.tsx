@@ -23,9 +23,7 @@ export const App: React.FC = () => {
 	const { showMenu, setShowMenu } = useMenuStore();
 	const { showOrder, setShowOrder, showOrdersTab } = useOrdersStore();
 	const { setTotal, setCountProducts, setAllProducts } = useCartStore();
-	const { logOut, setShowModal } = useUserStore();
-
-	const [userName, setUserName] = useState('');
+	const { logOut, setShowModal, setInputName } = useUserStore();
 
 	const toggleMenu = () => {
 		setShowMenu(!showMenu);
@@ -47,8 +45,8 @@ export const App: React.FC = () => {
 		setAllProducts([]); // Clears the cart
 		setTotal(0);
 		setCountProducts(0);
-		setUserName(''); // Empties the username
 		setShowModal(true);
+		setInputName('');
 	};
 
 	const [theme, setTheme] = useState<'light' | 'dark'>(() => {
@@ -76,8 +74,8 @@ export const App: React.FC = () => {
 						: `url('https://img.freepik.com/vector-premium/vector-patrones-fisuras-nube-o-rio-chino-fondo-asiatico-tradicional-diseno-abstracto_87543-7672.jpg')`,
 			}}
 		>
-			<Sidebar theme={theme} setTheme={setTheme} setUserName={setUserName} />
-			<SignOff userName={userName} setUserName={setUserName} />
+			<Sidebar theme={theme} setTheme={setTheme} />
+			<SignOff />
 			<div>{showOrdersTab ? '' : <Car />}</div>
 			<nav className='bg-dark 2xl:hidden fixed w-full bottom-0 left-0 text-3xl text-light py-2 px-8 flex items-center justify-between rounded-tl-xl rounded-tr-xl z-20'>
 				<button onClick={handleExit} className='p-2'>
@@ -92,7 +90,7 @@ export const App: React.FC = () => {
 			</nav>
 			<main className='2xl:pl-32 2xl:pr-96 pb-20'>
 				<div className='md:p-8 p-4'>
-					<Header userName={userName} setUserName={setUserName} />
+					<Header />
 					<Routes>
 						<Route path='/orders' element={<OrdersTab />} />
 						<Route path='/' element={<Home />} />

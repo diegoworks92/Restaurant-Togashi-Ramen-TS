@@ -77,9 +77,10 @@ const Products = ({
 	let filteredItems: Product[] = [];
 
 	// Defines the status for each type of product
-	const [ramen, setRamen] = useState([]);
-	const [drinks, setDrinks] = useState([]);
-	const [desserts, setDesserts] = useState([]);
+
+	const [ramen, setRamen] = useState<Product[]>([]);
+	const [drinks, setDrinks] = useState<Product[]>([]);
+	const [desserts, setDesserts] = useState<Product[]>([]);
 
 	// Call the API when the component is mounted
 	useEffect(() => {

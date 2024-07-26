@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useMenuStore, useUserStore } from '../store/store';
-import Login from './header/Login';
 import { useLocation } from 'react-router-dom';
+import Login from './header/Login';
 
-const Header: React.FC<UserNameType> = ({ userName, setUserName }) => {
+const Header: React.FC = () => {
 	/* date */
 	const [date] = useState(new Date());
 
-	const { isActive, setIsActive } = useUserStore();
+	const { isActive, setIsActive, name } = useUserStore();
 
 	const { setActiveButton, headerButton, setHeaderButton } = useMenuStore();
 
@@ -79,17 +79,17 @@ const Header: React.FC<UserNameType> = ({ userName, setUserName }) => {
 				<div>
 					<h1 className=' text-xl sm:text-2xl text-dark dark:text-light md:-mt-11 text-shadow '>
 						{' '}
-						{userName.trim() === '' ? (
-							<Login userName={userName} setUserName={setUserName} />
+						{name.trim() === '' ? (
+							<Login />
 						) : (
 							<>
 								<span>Welcome</span>{' '}
-								<span className='notranslate'> {userName} </span>
+								<span className='notranslate'> {name} </span>
 							</>
 						)}
 					</h1>
 					<p className='sm:text-xl text-center md:text-left text-dark dark:text-light dark:opacity-50 dark:block text-shadow dark:text-shadow-none'>
-						{userName.trim() === '' ? '' : `${date.toLocaleDateString()}`}
+						{name.trim() === '' ? '' : `${date.toLocaleDateString()}`}
 					</p>
 				</div>
 			</div>

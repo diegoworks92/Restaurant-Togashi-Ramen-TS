@@ -1,33 +1,26 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { MdOutlineCancel } from 'react-icons/md';
 import { useUserStore } from '../../store/store';
 import Buttons from '../designs/Buttons';
 
-const SignOff: React.FC<UserNameType> = ({ setUserName }) => {
-	const { isLoggedIn, logIn, showModal, setShowModal } = useUserStore();
-
-	const [error, setError] = useState('');
-
-	const [inputName, setInputName] = useState(''); // Add this state to save the value of the input field
-
-	const handleNameSubmit = () => {
-		if (inputName.trim() === '') {
-			setError('Please, enter your name.');
-		} else {
-			setError('');
-			setUserName(inputName); // Set the user's name with the value of the input field
-			logIn();
-			setShowModal(false);
-		}
-	};
+const SignOff: React.FC = () => {
+	const {
+		isLoggedIn,
+		showModal,
+		setShowModal,
+		handleNameSubmit,
+		error,
+		inputName,
+		setInputName,
+	} = useUserStore();
 
 	const handleCloseModal = () => {
 		setShowModal(false);
+		setInputName('');
 	};
 
 	useEffect(() => {
 		// If the user is already logged in, don't show the login window
-
 		if (isLoggedIn) {
 			setShowModal(false);
 		}
@@ -73,7 +66,7 @@ const SignOff: React.FC<UserNameType> = ({ setUserName }) => {
 												onChange={(e) => setInputName(e.target.value)} // Update inputName instead of calling setUserName directly
 												onKeyPress={(e) => {
 													if (e.key === 'Enter') {
-														handleNameSubmit();
+														handleNameSubmit(inputName);
 													}
 												}}
 												className='shadow appearance-none border rounded w-full py-2 px-3 dark:text-light dark:bg-secondary border-secondary leading-tight focus:outline-none focus:shadow-outline'
@@ -94,7 +87,7 @@ const SignOff: React.FC<UserNameType> = ({ setUserName }) => {
 									bgPrimary='bg-fall dark:bg-fall'
 									bgHover='bg-tangerine hover:dark:bg-tangerine'
 									paddingX='4'
-									onclick={handleNameSubmit}
+									onclick={() => handleNameSubmit(inputName)}
 								></Buttons>
 							</div>
 						</div>

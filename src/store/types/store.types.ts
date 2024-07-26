@@ -63,9 +63,7 @@ type Product = {
     type SidebarProps = {
         theme: 'light' | 'dark';
     setTheme: React.Dispatch<React.SetStateAction<'light' | 'dark'>>;
-    setUserName: React.Dispatch<React.SetStateAction<string>>;
 };
-
 
 type UserStore = {
     name: string;
@@ -77,8 +75,12 @@ type UserStore = {
     logOut: () => void;
     isActive: boolean;
     setIsActive: (value: boolean) => void;
+    error: string; 
+    setError: (value: string) => void; 
+    handleNameSubmit: (inputName: string) => void; 
+    inputName: string; 
+    setInputName: (value: string) => void; 
 };
-
 
 type UserNameType = {
     userName: string;

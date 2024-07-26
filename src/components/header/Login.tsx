@@ -1,19 +1,19 @@
 import { useCartStore, useUserStore } from '../../store/store';
 import { RiUser3Line } from 'react-icons/ri';
 
-const Login: React.FC<UserNameType> = ({ setUserName }) => {
-	const { setShowModal, setIsActive } = useUserStore();
+const Login: React.FC = () => {
+	const { setShowModal, setIsActive, setInputName } = useUserStore();
 
 	const { setCountProducts, setTotal, setAllProducts } = useCartStore();
 
 	// handleExit
 	const clickButton = () => {
-		setUserName('');
 		setShowModal(true);
 		setAllProducts([]);
 		setTotal(0);
 		setCountProducts(0);
 		setIsActive(true);
+		setInputName('');
 	};
 
 	return (

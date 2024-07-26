@@ -48,35 +48,43 @@ export const useCartStore = create<CartState>((set) => ({
 
 // Group the state related to the user
 export const useUserStore = create<UserStore>((set) => ({
-name: localStorage.getItem('name') || '',
-setName: (name) => {
-
- localStorage.setItem('name', name);
- set({ name });
-},
-showModal: true,
-setShowModal: (value: boolean) => {
-
- set({ showModal: value });
-},
-isLoggedIn: localStorage.getItem('isLoggedIn')
- ? localStorage.getItem('isLoggedIn') === 'true'
- : false,
-logIn: () => {
-
- localStorage.setItem('isLoggedIn', 'true');
- set(state => ({ isLoggedIn: true, userName: state.name }));
-},
-logOut: () => {
-
- localStorage.setItem('isLoggedIn', 'false');
- localStorage.setItem('name', '');
- set({ isLoggedIn: false, name: '' });
-},
-isActive: true,
-setIsActive: (value: boolean) => set({ isActive: value }),
+    name: localStorage.getItem('name') || '',
+    setName: (name) => {
+        localStorage.setItem('name', name);
+        set({ name });
+    },
+    showModal: false,
+    setShowModal: (value: boolean) => {
+        set({ showModal: value });
+    },
+    isLoggedIn: localStorage.getItem('isLoggedIn')
+        ? localStorage.getItem('isLoggedIn') === 'true'
+        : false,
+    logIn: () => {
+        localStorage.setItem('isLoggedIn', 'true');
+        set(state => ({ isLoggedIn: true, userName: state.name }));
+    },
+    logOut: () => {
+        localStorage.removeItem('name'); // Delete the username from localStorage
+        localStorage.setItem('isLoggedIn', 'false');
+        set({ isLoggedIn: false, name: '', error: '' }); // Reset error status
+    },
+    isActive: true,
+    setIsActive: (value: boolean) => set({ isActive: value }),
+    error: '',
+    setError: (value: string) => set({ error: value }),
+    handleNameSubmit: (inputName: string) => {
+        if (inputName.trim() === '') {
+            set({ error: 'Please, enter your name.' });
+        } else {
+            set({ error: '', name: inputName, isLoggedIn: true, showModal: false });
+            localStorage.setItem('name', inputName); // Save the username in localStorage
+            localStorage.setItem('isLoggedIn', 'true');
+        }
+    },
+    inputName: '', 
+    setInputName: (value: string) => set({ inputName: value }),
 }));
-
 
 
 interface ConfirmationState {

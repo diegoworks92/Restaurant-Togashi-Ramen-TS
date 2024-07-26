@@ -16,7 +16,7 @@ import {
 	useUserStore,
 } from '../store/store';
 
-const Sidebar: React.FC<SidebarProps> = ({ theme, setTheme, setUserName }) => {
+const Sidebar: React.FC<SidebarProps> = ({ theme, setTheme }) => {
 	const navigate = useNavigate();
 
 	const [color, setColor] = useState(false);
@@ -26,7 +26,8 @@ const Sidebar: React.FC<SidebarProps> = ({ theme, setTheme, setUserName }) => {
 
 	const { setCountProducts, setAllProducts, setTotal } = useCartStore();
 
-	const { logOut, isActive, setIsActive, setShowModal } = useUserStore();
+	const { logOut, isActive, setIsActive, setShowModal, setInputName } =
+		useUserStore();
 
 	const {
 		showMenu,
@@ -55,8 +56,8 @@ const Sidebar: React.FC<SidebarProps> = ({ theme, setTheme, setUserName }) => {
 		setTotal(0);
 		setCountProducts(0);
 		setIsActive(true);
-		setUserName('');
 		setShowModal(true);
+		setInputName('');
 	};
 
 	const buttonActions: {

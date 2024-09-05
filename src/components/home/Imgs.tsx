@@ -43,7 +43,7 @@ const Imgs = () => {
 		<>
 			<div
 				id='gallery'
-				className='relative bg-secondary bg-opacity-95 dark:bg-dark p-2 2xl:p-8 2xl:mt-10 2xl:pt-0 text-light dark:text-light  h-full flex flex-col rounded-xl'
+				className='relative bg-darkPrimary bg-opacity-95 dark:bg-dark p-2 2xl:p-8 2xl:mt-10 2xl:pt-0 text-light dark:text-light  h-full flex flex-col rounded-xl'
 			>
 				<h2 className='flex justify-center font-PermanentMarker mb-2 2xl:m-4 text-2xl'>
 					GALLERY

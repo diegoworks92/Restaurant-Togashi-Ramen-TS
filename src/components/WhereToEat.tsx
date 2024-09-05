@@ -39,7 +39,7 @@ const WhereToEat = (props: ButtonProp) => {
 						className={`py-2 sm:py-1 md:py-2 px-1 sm:px-2 rounded-xl flex flex-wrap justify-center ${
 							chooseButton === button.id
 								? 'bg-fall text-light dark:text-light'
-								: 'text-light dark:text-primary border border-light dark:border-light'
+								: 'text-fall dark:text-primary border border-light dark:border-light'
 						}`}
 						onClick={() => clickDine(button.id)}
 					>

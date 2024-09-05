@@ -68,7 +68,7 @@ const Orders = (props: OrdersProps) => {
 			{allProducts.map((product) => (
 				<div key={product.id}>
 					<div
-						className={`bg-secondary border border-light dark:border-light dark:bg-secondary p-4 ${pFour} rounded-xl mb-4`}
+						className={`bg-seaGreen border border-light dark:border-light dark:bg-secondary p-4 ${pFour} rounded-xl mb-4`}
 					>
 						<div className='grid grid-cols-6 mb-4'>
 							{/* Product description */}
@@ -190,7 +190,13 @@ const Orders = (props: OrdersProps) => {
 					</div>
 				</div>
 			))}
-			{allProducts.length === 0 && <p>No dishes are selected.</p>}
+			{allProducts.length === 0 && (
+				<p
+					className={`bg-seaGreen border border-light dark:border-light dark:bg-secondary p-4 ${pFour} rounded-xl mb-4`}
+				>
+					No dishes are selected.
+				</p>
+			)}
 		</div>
 	);
 };

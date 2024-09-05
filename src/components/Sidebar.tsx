@@ -5,6 +5,7 @@ import {
 	RiPercentLine,
 	RiMailLine,
 	RiLogoutBoxRLine,
+	RiUser3Line,
 	/* 	RiNotification2Line, */
 } from 'react-icons/ri';
 import { FaCartShopping } from 'react-icons/fa6';
@@ -26,7 +27,7 @@ const Sidebar: React.FC<SidebarProps> = ({ theme, setTheme }) => {
 
 	const { setCountProducts, setAllProducts, setTotal } = useCartStore();
 
-	const { logOut, isActive, setIsActive, setShowModal, setInputName } =
+	const { logOut, isActive, setIsActive, setShowModal, setInputName, name } =
 		useUserStore();
 
 	const {
@@ -143,7 +144,11 @@ const Sidebar: React.FC<SidebarProps> = ({ theme, setTheme }) => {
 					id: 7,
 					icons: theme === 'dark' ? <MdOutlineLightMode /> : <MdDarkMode />,
 				},
-				{ id: 8, link: '/', icons: <RiLogoutBoxRLine /> },
+				{
+					id: 8,
+					link: '/',
+					icons: name ? <RiLogoutBoxRLine /> : <RiUser3Line />,
+				},
 			],
 		},
 	];
@@ -169,8 +174,8 @@ const Sidebar: React.FC<SidebarProps> = ({ theme, setTheme }) => {
 	const galleryClick = (_id: number) => scrollToElement('gallery');
 
 	return (
-		<div
-			className={`bg-secondary bg-opacity-95 dark:bg-dark fixed 2xl:left-0 top-0 w-28 h-full flex flex-col justify-between py-6 rounded-tr-xl rounded-br-xl z-50 transition-all ${
+		<div /* bg-opacity-95 */
+			className={`bg-darkPrimary  dark:bg-dark fixed 2xl:left-0 top-0 w-28 h-full flex flex-col justify-between py-6 rounded-tr-xl rounded-br-xl z-50 transition-all ${
 				showMenu ? 'left-0' : '-left-full'
 			}`}
 		>
@@ -183,7 +188,7 @@ const Sidebar: React.FC<SidebarProps> = ({ theme, setTheme }) => {
 									button.showOnLarge ? (
 										<li
 											key={button.id}
-											className={`2xl:block hidden hover:bg-secondary dark:hover:bg-secondary p-4 rounded-tl-xl rounded-bl-xl group transition-colors`}
+											className={`2xl:block hidden hover:bg-primary dark:hover:bg-secondary p-4 rounded-tl-xl rounded-bl-xl group transition-colors`}
 										>
 											<Link to={button.link}>
 												<button
@@ -203,7 +208,7 @@ const Sidebar: React.FC<SidebarProps> = ({ theme, setTheme }) => {
 									) : (
 										<li
 											key={button.id}
-											className={`hover:bg-secondary  dark:hover:bg-secondary p-4 rounded-tl-xl rounded-bl-xl group transition-colors`}
+											className={`hover:bg-primary  dark:hover:bg-secondary p-4 rounded-tl-xl rounded-bl-xl group transition-colors`}
 										>
 											<Link to={button.link!}>
 												<button

@@ -17,7 +17,7 @@ const Car = () => {
 
 	return (
 		<div
-			className={`2xl:col-span-2 fixed top-0 bg-secondary bg-opacity-95 dark:bg-dark w-full 2xl:w-96 2xl:right-0 h-full transition-all z-40 ${
+			className={`2xl:col-span-2 fixed top-0 bg-darkPrimary bg-opacity-95 dark:bg-dark w-full 2xl:w-96 2xl:right-0 h-full transition-all z-40 ${
 				showOrder ? 'right-0' : '-right-full'
 			}`}
 		>
@@ -34,7 +34,7 @@ const Car = () => {
 					pFour=''
 				/>
 				{/* Submit payment */}
-				<div className='absolute bg-secondary dark:bg-secondary w-full bottom-0 left-0 mt-auto'>
+				<div className='absolute bg-darkPrimary dark:bg-secondary w-full bottom-0 left-0 mt-auto'>
 					<AccountTotal
 						total={total}
 						setTotal={setTotal}

@@ -6,7 +6,12 @@ import {
 	useUserStore,
 } from './store/store';
 
-import { RiMenu3Fill, RiUser3Line, RiCloseLine } from 'react-icons/ri';
+import {
+	RiMenu3Fill,
+	RiUser3Line,
+	RiCloseLine,
+	RiLogoutBoxRLine,
+} from 'react-icons/ri';
 import { FaCartShopping } from 'react-icons/fa6';
 import Sidebar from './components/Sidebar';
 import Car from './components/Car';
@@ -17,13 +22,13 @@ import Desserts from './components/header/Desserts';
 import Home from './components/sidebar/Home';
 import OrdersTab from './components/sidebar/OrdersTab';
 import Ramen from './components/header/Ramen';
-import SignOff from './components/user/SignOff';
+import SignIn from './components/user/SignIn';
 
 export const App: React.FC = () => {
 	const { showMenu, setShowMenu } = useMenuStore();
 	const { showOrder, setShowOrder, showOrdersTab } = useOrdersStore();
 	const { setTotal, setCountProducts, setAllProducts } = useCartStore();
-	const { logOut, setShowModal, setInputName } = useUserStore();
+	const { logOut, setShowModal, setInputName, name } = useUserStore();
 
 	const toggleMenu = () => {
 		setShowMenu(!showMenu);
@@ -66,20 +71,28 @@ export const App: React.FC = () => {
 
 	return (
 		<div
-			className={`dark:bg-secondary bg-repeat w-full min-h-screen font-Nunito font-semibold`}
-			style={{
+			className={`dark:bg-secondary bg-primary bg-repeat w-full min-h-screen font-Nunito font-semibold`}
+			/* 			style={{
 				backgroundImage:
 					theme === 'dark'
 						? ''
 						: `url('https://img.freepik.com/vector-premium/vector-patrones-fisuras-nube-o-rio-chino-fondo-asiatico-tradicional-diseno-abstracto_87543-7672.jpg')`,
+			}} */
+			/* 	style={{
+				backgroundImage: theme === 'dark' ? '' : `url('/pattern.png')`,
+			}} */
+			style={{
+				backgroundImage: theme === 'dark' ? '' : `url('/pattern.webp')`,
+				backgroundSize: '300px 300px', // Ajusta el tamaño de la imagen
+				backgroundRepeat: 'repeat', // Hace que la imagen se repita
 			}}
 		>
 			<Sidebar theme={theme} setTheme={setTheme} />
-			<SignOff />
+			<SignIn />
 			<div>{showOrdersTab ? '' : <Car />}</div>
-			<nav className='bg-dark 2xl:hidden fixed w-full bottom-0 left-0 text-3xl text-light py-2 px-8 flex items-center justify-between rounded-tl-xl rounded-tr-xl z-20'>
+			<nav className='bg-darkPrimary dark:bg-dark 2xl:hidden fixed w-full bottom-0 left-0 text-3xl text-light py-2 px-8 flex items-center justify-between rounded-tl-xl rounded-tr-xl z-20'>
 				<button onClick={handleExit} className='p-2'>
-					<RiUser3Line />
+					{name ? <RiLogoutBoxRLine /> : <RiUser3Line />}
 				</button>
 				<button onClick={toggleOrders} className='p-2'>
 					<FaCartShopping />

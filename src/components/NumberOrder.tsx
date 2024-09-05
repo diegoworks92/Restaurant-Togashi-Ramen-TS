@@ -16,7 +16,7 @@ const NumberOrder = () => {
 		<>
 			<RiCloseLine
 				onClick={() => setShowOrder(false)}
-				className='2xl:hidden absolute right-4 top-15 p-3 box-content  bg-secondary rounded-full text-xl'
+				className='2xl:hidden absolute right-4 top-15 p-3 box-content bg-seaGreen dark:bg-secondary rounded-full text-xl'
 			/>
 			<h1 className='text-2xl mt-4 text-light'>{`Order #${randomNumber}`}</h1>
 		</>

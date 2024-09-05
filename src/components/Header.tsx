@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useMenuStore, useUserStore } from '../store/store';
 import { useLocation } from 'react-router-dom';
-import Login from './header/Login';
+/* import Login from './header/Login'; */
 
 const Header: React.FC = () => {
 	/* date */
@@ -70,17 +70,18 @@ const Header: React.FC = () => {
 	return (
 		<header id='home'>
 			{/* Title */}
-			<div className='flex flex-col items-center gap-4 md:flex-row md:justify-between '>
+			<div className='flex flex-col items-center gap-4 md:flex-row md:justify-between mb-4 lg:mb-0 dark:mb-0'>
 				<img
 					className=' w-24 h-32 2xl:w-20 2xl:h-24'
 					src='logo.ico'
 					alt='logo of a cat dressed as a ninja eating ramen'
 				/>
 				<div>
-					<h1 className=' text-xl sm:text-2xl text-dark dark:text-light md:-mt-11 text-shadow '>
-						{' '}
+					<h1 className=' text-xl sm:text-2xl text-light dark:text-light md:-mt-11 text-shadow bg-seaGreen dark:bg-transparent px-2 dark:px-0 rounded-t-lg bg-opacity-75'>
 						{name.trim() === '' ? (
+							/* (
 							<Login />
+						) */ ''
 						) : (
 							<>
 								<span>Welcome</span>{' '}
@@ -88,13 +89,13 @@ const Header: React.FC = () => {
 							</>
 						)}
 					</h1>
-					<p className='sm:text-xl text-center md:text-left text-dark dark:text-light dark:opacity-50 dark:block text-shadow dark:text-shadow-none'>
+					<p className='sm:text-xl text-center md:text-left text-light dark:text-light dark:opacity-50 dark:block text-shadow dark:text-shadow-none bg-seaGreen dark:bg-transparent px-2 dark:px-0 rounded-b-lg bg-opacity-75'>
 						{name.trim() === '' ? '' : `${date.toLocaleDateString()}`}
 					</p>
 				</div>
 			</div>
 			{/* Tabs */}
-			<nav className='text-light dark:text-light bg-secondary flex items-center justify-between md:justify-start md:gap-8 border-b dark:border-light mb-8 font-bold rounded-lg dark:rounded-none'>
+			<nav className='text-light dark:text-light bg-darkPrimary dark:bg-secondary flex items-center justify-between md:justify-start md:gap-8 dark:border-b dark:border-light mb-8 font-bold rounded-lg dark:rounded-none'>
 				{namesBtn.map((names) => (
 					<Link to={names.link} key={names.id}>
 						<button onClick={() => toggleOrdersTabF(names.id)}>

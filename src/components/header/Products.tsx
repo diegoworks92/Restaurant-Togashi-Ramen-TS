@@ -184,7 +184,7 @@ const Products = ({
 	}, []);
 
 	return (
-		<div className='bg-secondary bg-opacity-95 dark:bg-transparent rounded-xl pt-6'>
+		<div className='bg-darkPrimary bg-opacity-95 dark:bg-transparent rounded-xl pt-6'>
 			<div className='flex justify-center'>
 				<h2 className='order-1 2xl:order-none text-2xl text-light dark:text-light -mt-5'>
 					{title}
@@ -231,7 +231,7 @@ const Products = ({
 							value={search}
 							placeholder='Search'
 							onChange={(e) => setSearch(e.target.value)}
-							className='bg-secondary dark:bg-dark py-2 pl-10  rounded-2xl text-light outline-none placeholder-light min-w-full lg:min-w-min'
+							className='bg-seaGreen dark:bg-dark py-2 pl-10  rounded-2xl text-light outline-none placeholder-light min-w-full lg:min-w-min'
 						/>
 					</div>
 				</form>
@@ -240,7 +240,7 @@ const Products = ({
 
 				<details>
 					<summary
-						className={`flex items-center gap-4 text-light bg-secondary dark:bg-dark py-2 px-4 min-w-full ${
+						className={`flex items-center gap-4 text-light bg-seaGreen dark:bg-dark py-2 px-4 min-w-full ${
 							sort ? 'rounded-t-2xl' : 'rounded-2xl'
 						}`}
 						onClick={trueOrder}
@@ -270,7 +270,7 @@ const Products = ({
 					sortedItems.map((product) => (
 						<div
 							key={product.id}
-							className='item bg-secondary dark:bg-dark p-8 rounded-xl flex flex-col items-center gap-2 text-center text-light m-4 mt-12 w-full sm:w-1/3 lg:w-1/4 min-w-[240px] relative justify-between'
+							className='item bg-seaGreen dark:bg-dark p-8 rounded-xl flex flex-col items-center gap-2 text-center text-light m-4 mt-12 w-full sm:w-1/3 lg:w-1/4 min-w-[240px] relative justify-between'
 						>
 							<img
 								src={product.img}
@@ -289,7 +289,7 @@ const Products = ({
 							{explanationId === product.id.toString() && (
 								<span
 									onClick={() => toggleExplanation(product.id.toString())}
-									className='absolute top-0 left-0 text-secondary bg-white rounded-xl z-10'
+									className='absolute top-0 left-0 text-secondary bg-light rounded-xl z-10'
 								>
 									{product.description}
 								</span>
@@ -335,7 +335,7 @@ const Products = ({
 						</div>
 					))
 				) : (
-					<div className='item flex flex-col items-center gap-2 text-center w-96 text-white bg-dark p-14 text-3xl rounded-2xl m-4 '>
+					<div className='item flex flex-col items-center gap-2 text-center w-96 text-light bg-seaGreen dark:bg-dark p-14 text-3xl rounded-2xl m-4 '>
 						<p className=' '>{`Loading data...`}</p>
 					</div>
 				)}

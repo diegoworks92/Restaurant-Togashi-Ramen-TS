@@ -6,7 +6,7 @@ function Discount() {
 	return (
 		<div
 			id='discount'
-			className='relative md:flex md:flex-col md:justify-center items-center md:w-full bg-secondary bg-opacity-95 dark:bg-dark text-light dark:text-light h-full rounded-xl pt-1 pb-1 mt-1 mb-1'
+			className='relative md:flex md:flex-col md:justify-center items-center md:w-full bg-darkPrimary bg-opacity-95 dark:bg-dark text-light dark:text-light h-full rounded-xl pt-1 pb-1 mt-1 mb-1'
 		>
 			<div className='m-18 mb-6 flex items-center md:w-1/2 flex-col mx-3 md:mx-0'>
 				<div className='flex items-center'>

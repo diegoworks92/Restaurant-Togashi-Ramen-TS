@@ -20,10 +20,10 @@ const Login: React.FC = () => {
 		<div>
 			<button
 				onClick={clickButton}
-				className='hidden md:block mr-2 w-9 h-9 p-[4px] dark:text-light text-light hover:text-fall hover:dark:text-primary border-2 bg-secondary dark:bg-transparent dark:border-light border-dark hover:border-fall hover:dark:border-primary rounded-full text-shadow dark:text-shadow-none'
+				className='hidden md:block mr-2 w-9 h-9 p-[4px] dark:text-light text-light hover:text-light hover:dark:text-primary border-2 bg-secondary hover:bg-fall dark:bg-transparent dark:border-light border-dark hover:border-fall hover:dark:border-primary rounded-full text-shadow dark:text-shadow-none'
 			>
 				<RiUser3Line />
-				<span className='text-sm flex justify-center whitespace-nowrap mt-2 text-dark dark:text-light'>
+				<span className='text-sm flex justify-center whitespace-nowrap mt-2 font-bold text-dark dark:text-light'>
 					Sign in
 				</span>
 			</button>

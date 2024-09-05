@@ -30,7 +30,7 @@ export function Contact() {
 	return (
 		<div
 			id='contact'
-			className='relative flex flex-col md:grid md:grid-cols-2 2xl:mb-10 bg-secondary bg-opacity-95 dark:bg-dark text-light dark:text-light h-full rounded-xl pt-1 pb-1 mt-1 mb-1'
+			className='relative flex flex-col md:grid md:grid-cols-2 2xl:mb-10 bg-darkPrimary bg-opacity-95 dark:bg-dark text-light dark:text-light h-full rounded-xl pt-1 pb-1 mt-1 mb-1'
 		>
 			<div className='order-1 md:order-none m-18 mb-6 flex items-center flex-col'>
 				<h2 className='flex justify-center font-PermanentMarker text-2xl m-6'>

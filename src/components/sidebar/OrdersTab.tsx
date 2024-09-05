@@ -16,7 +16,7 @@ const OrdersTab = () => {
 			{/* Orders */}
 			<div
 				id='orders'
-				className='hidden 2xl:flex bg-secondary bg-opacity-95 dark:bg-dark relative pb-10 pt-16 2xl:pt-1 text-light dark:text-light p-8 h-full w-full flex-col rounded-xl'
+				className='hidden 2xl:flex bg-darkPrimary bg-opacity-95 dark:bg-dark relative pb-10 pt-16 2xl:pt-1 text-light dark:text-light p-8 h-full w-full flex-col rounded-xl'
 			>
 				<NumberOrder />
 

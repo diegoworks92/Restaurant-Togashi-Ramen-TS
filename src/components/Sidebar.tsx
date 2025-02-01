@@ -8,6 +8,7 @@ import {
 	RiUser3Line,
 	/* 	RiNotification2Line, */
 } from 'react-icons/ri';
+import { TbApi } from 'react-icons/tb';
 import { FaCartShopping } from 'react-icons/fa6';
 import { MdDarkMode, MdOutlineLightMode, MdPhotoCamera } from 'react-icons/md';
 import {
@@ -16,6 +17,7 @@ import {
 	useCartStore,
 	useUserStore,
 } from '../store/store';
+import Logo from './sidebar/Logo';
 
 const Sidebar: React.FC<SidebarProps> = ({ theme, setTheme }) => {
 	const navigate = useNavigate();
@@ -92,6 +94,9 @@ const Sidebar: React.FC<SidebarProps> = ({ theme, setTheme }) => {
 			homeClick(8);
 			toggleOrdersTabF(8);
 		},
+		9: () => {
+			window.open('https://togashi-api.vercel.app/', '_blank');
+		},
 		default: (id: number) => toggleOrdersTabF(id),
 	};
 
@@ -149,6 +154,10 @@ const Sidebar: React.FC<SidebarProps> = ({ theme, setTheme }) => {
 					link: '/',
 					icons: name ? <RiLogoutBoxRLine /> : <RiUser3Line />,
 				},
+				{
+					id: 9,
+					icons: <TbApi />,
+				},
 			],
 		},
 	];
@@ -181,6 +190,7 @@ const Sidebar: React.FC<SidebarProps> = ({ theme, setTheme }) => {
 		>
 			<div>
 				<ul className='pl-4'>
+					<Logo />
 					<div>
 						{sidebar.map((data) => (
 							<div key={data.id}>
@@ -194,8 +204,8 @@ const Sidebar: React.FC<SidebarProps> = ({ theme, setTheme }) => {
 												<button
 													className={`${
 														activeButton === button.id
-															? 'bg-fall dark:bg-primary text-light dark:text-light'
-															: 'text-light dark:text-primary'
+															? 'bg-fall dark:bg-darkSecondary text-light dark:text-light'
+															: 'text-light dark:text-darkSecondary'
 													} ${
 														isActive ? 'active' : ''
 													} text-2xl group-hover:bg-fall flex justify-center p-4 rounded-xl  group-hover:text-light transition-colors`}
@@ -214,8 +224,8 @@ const Sidebar: React.FC<SidebarProps> = ({ theme, setTheme }) => {
 												<button
 													className={`${
 														activeButton === button.id
-															? 'bg-fall dark:bg-primary text-light dark:text-light'
-															: 'text-light dark:text-primary'
+															? 'bg-fall dark:bg-darkSecondary text-light dark:text-light'
+															: 'text-light dark:text-darkSecondary'
 													} ${
 														isActive ? 'active' : ''
 													} text-2xl group-hover:bg-fall flex justify-center p-4 rounded-xl  group-hover:text-light transition-colors`}

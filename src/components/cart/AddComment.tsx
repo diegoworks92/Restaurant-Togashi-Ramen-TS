@@ -35,7 +35,7 @@ const AddComment = ({ enableComments }: EnableComments) => {
 				className={` ${enableComments} w-3/4 flex flex-col justify-center items-center`}
 			>
 				<textarea
-					className='w-full px-3 py-2 text-sm leading-tight text-dark border rounded shadow appearance-none focus:outline-none focus:shadow-outline max-h-40'
+					className='w-full px-3 py-2 text-sm leading-tight bg-white text-dark border rounded shadow appearance-none focus:outline-none focus:shadow-outline max-h-40'
 					value={comment}
 					onChange={handleCommentChange}
 					placeholder='Add observations...'

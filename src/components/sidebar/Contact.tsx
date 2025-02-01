@@ -48,8 +48,8 @@ export function Contact() {
 
 				<Buttons
 					buttonName='Send Message'
-					bgPrimary='bg-fall dark:bg-primary'
-					bgHover='bg-tangerine hover:dark:bg-primHover'
+					bgPrimary='bg-fall dark:bg-darkSecondary'
+					bgHover='bg-tangerine dark:hover:bg-fall'
 					paddingX='4'
 					onclick={showForm}
 				/>
@@ -94,13 +94,22 @@ export function Contact() {
 					SOCIALS
 				</h2>
 				<div className='flex justify-center space-x-4 text-2xl '>
-					<a href='#' className='hover:text-fall dark:hover:text-primary'>
+					<a
+						href='#'
+						className='text-fall hover:text-tangerine dark:text-darkSecondary dark:hover:text-fall'
+					>
 						<FaInstagram />
 					</a>
-					<a href='#' className='hover:text-fall dark:hover:text-primary'>
+					<a
+						href='#'
+						className='text-fall hover:text-tangerine dark:text-darkSecondary dark:hover:text-fall'
+					>
 						<FaFacebook />
 					</a>
-					<a href='#' className='hover:text-fall dark:hover:text-primary'>
+					<a
+						href='#'
+						className='text-fall hover:text-tangerine dark:text-darkSecondary dark:hover:text-fall'
+					>
 						<FaSquareXTwitter />
 					</a>
 				</div>

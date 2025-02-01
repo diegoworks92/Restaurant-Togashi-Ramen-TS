@@ -46,7 +46,7 @@ const Car = () => {
 						twoXlHidden='2xl:hidden'
 						totalPayment='Total'
 						textDark='text-light'
-						lineWhite='border dark:border-light w-full'
+						lineWhite='border border-light w-full'
 						isOpen={isOpen}
 						setIsOpen={setIsOpen}
 						toggleOpen={toggleOpen}

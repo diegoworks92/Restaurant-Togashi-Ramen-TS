@@ -251,13 +251,13 @@ const Products = ({
 					<div className='flex flex-col text-dark'>
 						<button
 							onClick={() => setSortOrder('asc')}
-							className='border border-dark bg-concrete dark:bg-light '
+							className='border text-light dark:text-light border-dark bg-seaGreen dark:bg-dark hover:text-secondary hover:bg-light dark:hover:bg-light dark:hover:text-dark'
 						>
 							Price (Low to High)
 						</button>
 						<button
 							onClick={() => setSortOrder('desc')}
-							className='border border-dark rounded-b-lg bg-concrete dark:bg-light '
+							className='border text-light dark:text-light border-dark bg-seaGreen dark:bg-dark hover:text-secondary hover:bg-light dark:hover:bg-light dark:hover:text-dark'
 						>
 							Price (High to Low)
 						</button>

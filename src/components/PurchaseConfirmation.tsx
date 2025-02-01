@@ -24,7 +24,7 @@ function PurchaseConfirmation() {
 			<Buttons
 				buttonName='Make the purchase of the order'
 				bgPrimary='bg-delete 2xl:w-1/3'
-				bgHover='bg-tangerine hover:dark:bg-tangerine'
+				bgHover='bg-fall hover:dark:bg-fall'
 				paddingX='4'
 				onclick={handlePurchase}
 				typeSubmit=''

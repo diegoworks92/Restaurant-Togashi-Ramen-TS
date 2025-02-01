@@ -151,9 +151,9 @@ const Orders = (props: OrdersProps) => {
 									<button
 										className={`text-sm cursor-pointer flex ${
 											explanationId === product.id
-												? 'text-fall dark:text-primary'
+												? 'text-fall dark:text-darkSecondary'
 												: 'text-light dark:text-light'
-										} hover:text-fall dark:hover:text-primary`}
+										} hover:text-fall dark:hover:text-darkSecondary`}
 										onClick={() => toggleExplanation(product.id)}
 									>
 										<span>Description</span>

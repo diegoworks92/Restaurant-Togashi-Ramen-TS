@@ -133,7 +133,7 @@ const SendMSG = () => {
 						buttonName='Send'
 						typeSubmit={'submit'}
 						bgPrimary='bg-primary px-10'
-						bgHover='bg-primHover'
+						bgHover='bg-fall'
 						paddingX=''
 					/>
 				</div>

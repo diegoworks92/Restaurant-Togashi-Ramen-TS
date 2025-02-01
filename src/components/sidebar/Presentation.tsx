@@ -1,4 +1,5 @@
 import Anchor from '../designs/Anchor';
+import User from '../header/User';
 
 const Presentation = () => {
 	return (
@@ -9,6 +10,7 @@ const Presentation = () => {
 				className='rounded-xl brightness-50 h-full w-full absolute'
 			/>
 			<div className='z-10 text-center flex justify-center flex-col items-center'>
+				<User className='md:hidden pb-2 pt-5 sm:pt-0' />
 				<img src='logo.ico' alt='logo' className='' />
 				<h1 className='font-semibold text-4xl md:text-7xl font-PermanentMarker text-light'>
 					Togashi Sapporo Ramen

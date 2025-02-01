@@ -56,7 +56,7 @@ const Imgs = () => {
 							onClick={() => handleClick(img)}
 						>
 							<img
-								className={`${img.classImg} cursor-pointer`}
+								className={`${img.classImg} cursor-pointer rounded-lg`}
 								src={img.src}
 								alt={img.alt}
 							/>
@@ -77,7 +77,7 @@ const Imgs = () => {
 						<img
 							src={selectedImg.src}
 							alt={selectedImg.alt}
-							className='w-96 2xl:w-[1000px] h-60 2xl:h-[700px]'
+							className='w-96 2xl:w-[1000px] h-60 2xl:h-[700px] rounded-lg'
 						/>
 						<p className='absolute top-0 left-0 m-2 text-light text-2xl'>
 							{selectedImg.id}/{imgs.length}
@@ -121,7 +121,7 @@ const imgs = [
 		id: 1,
 		src: '../kitchen/img1.webp',
 		alt: 'asian restaurant',
-		classDiv: 'w-full h-44 overflow-hidden',
+		classDiv: 'w-full h-44 overflow-hidden rounded-lg',
 		classImg:
 			'w-full h-full object-cover transform transition-all duration-500 hover:scale-110',
 	},
@@ -129,7 +129,7 @@ const imgs = [
 		id: 2,
 		src: '../kitchen/img2.webp',
 		alt: 'asian restaurant',
-		classDiv: 'w-full h-44 overflow-hidden',
+		classDiv: 'w-full h-44 overflow-hidden rounded-lg',
 		classImg:
 			'w-full h-full object-cover transform transition-all duration-500 hover:scale-110',
 	},
@@ -137,7 +137,7 @@ const imgs = [
 		id: 3,
 		src: '../kitchen/img3.webp',
 		alt: 'asian restaurant',
-		classDiv: 'w-full h-44 overflow-hidden',
+		classDiv: 'w-full h-44 overflow-hidden rounded-lg',
 		classImg:
 			'w-full h-full object-cover transform transition-all duration-500 hover:scale-110',
 	},
@@ -145,7 +145,7 @@ const imgs = [
 		id: 4,
 		src: '../kitchen/img4.webp',
 		alt: 'asian restaurant',
-		classDiv: 'w-full h-44 overflow-hidden',
+		classDiv: 'w-full h-44 overflow-hidden rounded-lg',
 		classImg:
 			'w-full h-full object-cover transform transition-all duration-500 hover:scale-110',
 	},
@@ -153,7 +153,7 @@ const imgs = [
 		id: 5,
 		src: '../kitchen/img5.webp',
 		alt: 'asian restaurant',
-		classDiv: 'w-full h-44 overflow-hidden',
+		classDiv: 'w-full h-44 overflow-hidden rounded-lg',
 		classImg:
 			'w-full h-full object-cover transform transition-all duration-500 hover:scale-110',
 	},
@@ -161,7 +161,7 @@ const imgs = [
 		id: 6,
 		src: '../kitchen/img6.webp',
 		alt: 'asian restaurant',
-		classDiv: 'w-full h-44 overflow-hidden',
+		classDiv: 'w-full h-44 overflow-hidden rounded-lg',
 		classImg:
 			'w-full h-full object-cover transform transition-all duration-500 hover:scale-110',
 	},
@@ -169,7 +169,7 @@ const imgs = [
 		id: 7,
 		src: '../kitchen/img7.webp',
 		alt: 'asian restaurant',
-		classDiv: 'w-full h-44 overflow-hidden',
+		classDiv: 'w-full h-44 overflow-hidden rounded-lg',
 		classImg:
 			'w-full h-full object-cover transform transition-all duration-500 hover:scale-110',
 	},
@@ -177,7 +177,7 @@ const imgs = [
 		id: 8,
 		src: '../kitchen/img8.webp',
 		alt: 'asian restaurant',
-		classDiv: 'w-full h-44 overflow-hidden',
+		classDiv: 'w-full h-44 overflow-hidden rounded-lg',
 		classImg:
 			'w-full h-full object-cover transform transition-all duration-500 hover:scale-110',
 	},
@@ -185,7 +185,7 @@ const imgs = [
 		id: 9,
 		src: '../kitchen/img9.webp',
 		alt: 'asian restaurant',
-		classDiv: 'w-full h-44 overflow-hidden',
+		classDiv: 'w-full h-44 overflow-hidden rounded-lg',
 		classImg:
 			'w-full h-full object-cover transform transition-all duration-500 hover:scale-110',
 	},

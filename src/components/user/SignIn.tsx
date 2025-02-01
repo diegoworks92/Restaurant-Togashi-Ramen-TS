@@ -41,7 +41,7 @@ const SignIn: React.FC = () => {
 						open
 						className='bg-light rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:max-w-lg sm:w-full border border-light'
 					>
-						<div className='bg-seaGreen text-dark dark:bg-dark px-4 pt-5 pb-4 sm:p-6 sm:pb-4'>
+						<div className='bg-darkPrimary text-dark dark:bg-dark px-4 pt-5 pb-4 sm:p-6 sm:pb-4'>
 							<div className='sm:flex sm:items-start'>
 								<button
 									type='button'
@@ -78,7 +78,7 @@ const SignIn: React.FC = () => {
 								</div>
 							</div>
 						</div>
-						<div className='text-center bg-seaGreen dark:bg-dark px-4 sm:px-6 sm:flex sm:flex-row-reverse'>
+						<div className='text-center bg-darkPrimary dark:bg-dark px-4 sm:px-6 sm:flex sm:flex-row-reverse'>
 							<Buttons
 								buttonName='Accept'
 								bgPrimary='bg-fall dark:bg-fall'

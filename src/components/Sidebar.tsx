@@ -208,7 +208,7 @@ const Sidebar: React.FC<SidebarProps> = ({ theme, setTheme }) => {
 															: 'text-light dark:text-darkSecondary'
 													} ${
 														isActive ? 'active' : ''
-													} text-2xl group-hover:bg-fall flex justify-center p-4 rounded-xl  group-hover:text-light transition-colors`}
+													} text-2xl group-hover:bg-fall dark:group-hover:bg-darkSecondary flex justify-center p-4 rounded-xl  group-hover:text-light transition-colors`}
 													onClick={() => handleButtonClick(button.id)}
 												>
 													<span>{button.icons} </span>
@@ -228,7 +228,7 @@ const Sidebar: React.FC<SidebarProps> = ({ theme, setTheme }) => {
 															: 'text-light dark:text-darkSecondary'
 													} ${
 														isActive ? 'active' : ''
-													} text-2xl group-hover:bg-fall flex justify-center p-4 rounded-xl  group-hover:text-light transition-colors`}
+													} text-2xl group-hover:bg-fall dark:group-hover:bg-darkSecondary flex justify-center p-4 rounded-xl group-hover:text-light transition-colors`}
 													onClick={() => handleButtonClick(button.id)}
 												>
 													<span>{button.icons} </span>

@@ -15,7 +15,7 @@ export default {
 				dark: '#19211a', // dark  '#1A1A1A'
 				delete: '#a81111',
 				fall: '#B83A2E',
-				tangerine: '#CA4E44',
+				tangerine: '#d14234',
 				marine: '#012f47',
 				night: '#111417',
 				/* 	concrete: '#cef2e4', */
@@ -23,24 +23,6 @@ export default {
 				vegetarian: '#7aa600',
 				vegan: '#8CA064',
 			},
-			/* 			colors: {
-				primary: '#3E8C6F',
-				primHover: '#429677',
-				darkPrimary: '#2c634f',
-				seaGreen: '#1f4739',
-				secondary: '#262837',
-				light: '#F2F2F2',
-				dark: '#1F1D2B',
-				delete: '#a81111',
-				fall: '#C15B1C',
-				tangerine: '#FF6F03',
-				marine: '#012f47',
-				night: '#111417',
-				concrete: '#cef2e4',
-				sun: '#F7B761',
-				vegetarian: '#7aa600',
-				vegan: '#01472c',
-			}, */
 			fontFamily: {
 				PermanentMarker: ['Permanent Marker'],
 				Inter: ['Inter'],

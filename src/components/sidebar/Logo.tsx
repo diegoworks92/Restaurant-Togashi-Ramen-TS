@@ -3,7 +3,7 @@ const Logo = () => {
 		<>
 			{/* Logo de la aplicación */}
 			<img
-				className='w-24 h-32 2xl:w-20 2xl:h-24 hidden 2xl:block'
+				className='w-24 h-32 2xl:w-14 2xl:h-16 hidden 2xl:block ml-4'
 				src='logo.ico'
 				alt='logo of a cat dressed as a ninja eating ramen'
 			/>

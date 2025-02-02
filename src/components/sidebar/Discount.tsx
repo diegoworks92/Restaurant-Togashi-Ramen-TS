@@ -1,5 +1,5 @@
 import { PiForkKnifeFill } from 'react-icons/pi';
-import { FaMotorcycle } from 'react-icons/fa6';
+import { MdDeliveryDining } from 'react-icons/md';
 import { IoBagCheckSharp } from 'react-icons/io5';
 
 function Discount() {
@@ -75,8 +75,8 @@ function Discount() {
 					<h2 className='flex justify-center font-PermanentMarker text-2xl m-6'>
 						Delivery
 					</h2>
-					<span className='text-2xl'>
-						<FaMotorcycle />
+					<span className='text-2xl pt-2'>
+						<MdDeliveryDining />
 					</span>
 				</div>
 				<div>
